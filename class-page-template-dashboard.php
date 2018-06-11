@@ -93,7 +93,7 @@ class Page_Template_Dashboard {
 		 */
 		$template_name = ( 0 === strlen( trim( $template_name ) ) || ! file_exists( $template ) ) ?
 			 __( 'Default', 'page-template-dashboard-locale' ) :
-			get_file_description( $template );
+			get_file_data( $template, array('Name' => 'Template Name') )['Name'];
 
 		// Finally, render the template name.
 		echo esc_html( $template_name );
